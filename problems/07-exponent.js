@@ -31,6 +31,7 @@ function exponent(num, power) {
         return (1 / num) * exponent(num, power + 1)
 
     }
+    
   }
   
 console.log(exponent(3, 2)); // 9

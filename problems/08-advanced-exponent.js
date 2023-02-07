@@ -39,12 +39,27 @@ be recursively calling `advancedExponent`. Find a way to visually see how many
 times `advancedExponent` is being recursively called.
 ***********************************************************************/
 
-
 function advancedExponent(b, n) {
-  
-}
+  if(n === 0) {
+    return 1;
+  }
+  if(n === 1) {
+    return b;
+  }
+  if(n % 2 === 0) {
+    return advancedExponent(b, n / 2) * advancedExponent(b, n / 2)
+  }
+  if(n % 2 === 1) {
+    return b * (advancedExponent(b, (n - 1) / 2)) * (advancedExponent(b, (n - 1) / 2))
+  }
 
+  }
 
+console.log(advancedExponent(2, 8));
+console.log(advancedExponent(2, 9));
+console.log(advancedExponent(2, 10));
+console.log(advancedExponent(2, 11));
+console.log(advancedExponent(2, 12));
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = advancedExponent;
